@@ -9,10 +9,12 @@
  */
 angular.module('myToDoApp')
   .controller('TodoCtrl', function ($scope) {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    $scope.todos=['Item1','Item2','Item3']
+    $scope.todos=[];
+    $scope.addTodo = function(){
+      $scope.todos.push($scope.todo);
+      $scope.todo ='';
+    };
+    $scope.romoveTodo = function(index){
+      $scope.todos.splice(index,1);
+    }
   });
